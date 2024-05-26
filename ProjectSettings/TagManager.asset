@@ -9,6 +9,7 @@ TagManager:
   - Faixa
   - Pilar_Grande
   - Teleport
+  - Inspetor
   layers:
   - Default
   - TransparentFX
