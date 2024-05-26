@@ -8,6 +8,7 @@ TagManager:
   - Celling
   - Faixa
   - Pilar_Grande
+  - Teleport
   layers:
   - Default
   - TransparentFX
