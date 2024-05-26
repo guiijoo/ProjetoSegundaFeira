@@ -10743,14 +10743,14 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 367077576}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 2000
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
+  m_Constraints: 122
+  m_CollisionDetection: 1
 --- !u!136 &367077578
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -13674,7 +13674,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &466666609
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13686,6 +13686,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0.0255999}
   m_LocalScale: {x: 0.0001, y: 0.0001, z: 1}
   m_Children:
+  - {fileID: 823187917}
   - {fileID: 792004414}
   m_Father: {fileID: 412471180855918273}
   m_RootOrder: 7
@@ -24707,7 +24708,7 @@ RectTransform:
   - {fileID: 1152373192}
   - {fileID: 898487271}
   m_Father: {fileID: 466666609}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -25788,6 +25789,69 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 64412854790375274, guid: 150fadf88f51c2b4b9b7b62af8d39db9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 150fadf88f51c2b4b9b7b62af8d39db9, type: 3}
+--- !u!1 &823187916
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 823187917}
+  - component: {fileID: 823187918}
+  m_Layer: 0
+  m_Name: QuizManagerInspetor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &823187917
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823187916}
+  m_LocalRotation: {x: -0.15891542, y: 0.25836486, z: -0.050392162, w: 0.9515536}
+  m_LocalPosition: {x: -66.52559, y: 14.131181, z: 0.08049193}
+  m_LocalScale: {x: 0.15261954, y: 0.31991306, z: 0.051879983}
+  m_Children: []
+  m_Father: {fileID: 466666609}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &823187918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823187916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82602fa318b67374aace41e38e30505b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  QnA:
+  - Question: "Finalmente acordou! Se apresse, aproveite para ir ao banheiro e comer
+      antes do \xF4nibus sair!"
+    Answers:
+    - Ok, estou indo. Logo estou de volta!
+    - "Que dia lindo! \xC9 perfeito para um piquenique no parque."
+    - Ah, finalmente acordei! Sonhei que estava nadando em um mar de chocolate.
+    CorrectAnswer: 1
+  - Question: teste
+    Answers:
+    - teste
+    - teste
+    - teste
+    CorrectAnswer: 2
+  options:
+  - {fileID: 1756113577}
+  - {fileID: 1152373191}
+  - {fileID: 898487270}
+  currentQuestion: 0
+  QuestionText: {fileID: 127241424}
 --- !u!1 &823744105
 GameObject:
   m_ObjectHideFlags: 0
@@ -28424,11 +28488,12 @@ GameObject:
   - component: {fileID: 898487274}
   - component: {fileID: 898487273}
   - component: {fileID: 898487272}
-  - component: {fileID: 898487276}
+  - component: {fileID: 898487277}
   - component: {fileID: 898487275}
+  - component: {fileID: 898487276}
   m_Layer: 5
   m_Name: Button (2)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28496,8 +28561,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 898487275}
-        m_MethodName: Disable
+      - m_Target: {fileID: 898487277}
+        m_MethodName: Answer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -28553,10 +28618,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 898487270}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c87ce6692ec47434a8a28b0b7ac17c3c, type: 3}
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 898487272}
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 367077581}
+          m_MethodName: GVROn
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 367077581}
+          m_MethodName: GVROff
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &898487276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28566,9 +28661,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 898487270}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9db466ea9cf7024c961c2dfdca2de5b, type: 3}
+  m_Script: {fileID: 11500000, guid: 9868f55bf3eb58c47986fdb114d668e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GVRClickOn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 898487277}
+        m_MethodName: Answer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &898487277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898487270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c3244ed66075554ca82661a25158e5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCorrect: 0
+  quizManagerInspetor: {fileID: 0}
 --- !u!1001 &899461260
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37175,11 +37298,12 @@ GameObject:
   - component: {fileID: 1152373195}
   - component: {fileID: 1152373194}
   - component: {fileID: 1152373193}
-  - component: {fileID: 1152373197}
+  - component: {fileID: 1152373198}
   - component: {fileID: 1152373196}
+  - component: {fileID: 1152373197}
   m_Layer: 5
   m_Name: Button (1)
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37247,8 +37371,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1152373196}
-        m_MethodName: Disable
+      - m_Target: {fileID: 1152373198}
+        m_MethodName: Answer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -37304,10 +37428,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 1152373191}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c87ce6692ec47434a8a28b0b7ac17c3c, type: 3}
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 1152373193}
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 367077581}
+          m_MethodName: GVROn
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 367077581}
+          m_MethodName: GVROff
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1152373197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37317,9 +37471,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 1152373191}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9db466ea9cf7024c961c2dfdca2de5b, type: 3}
+  m_Script: {fileID: 11500000, guid: 9868f55bf3eb58c47986fdb114d668e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GVRClickOn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1152373198}
+        m_MethodName: Answer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1152373198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152373191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c3244ed66075554ca82661a25158e5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCorrect: 0
+  quizManagerInspetor: {fileID: 0}
 --- !u!4 &1155167303 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4604579876288746, guid: 1c6290f76fd11c74fa326bdf8cd95a9f,
@@ -61209,11 +61391,12 @@ GameObject:
   - component: {fileID: 1756113581}
   - component: {fileID: 1756113580}
   - component: {fileID: 1756113579}
-  - component: {fileID: 1756113583}
+  - component: {fileID: 1756113584}
   - component: {fileID: 1756113582}
+  - component: {fileID: 1756113583}
   m_Layer: 5
   m_Name: Button
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61281,8 +61464,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1756113582}
-        m_MethodName: Disable
+      - m_Target: {fileID: 1756113584}
+        m_MethodName: Answer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -61338,10 +61521,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 1756113577}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c87ce6692ec47434a8a28b0b7ac17c3c, type: 3}
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 1756113579}
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 367077581}
+          m_MethodName: GVROn
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 367077581}
+          m_MethodName: GVROff
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1756113583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61351,9 +61564,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 1756113577}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9db466ea9cf7024c961c2dfdca2de5b, type: 3}
+  m_Script: {fileID: 11500000, guid: 9868f55bf3eb58c47986fdb114d668e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GVRClickOn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1756113584}
+        m_MethodName: Answer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1756113584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756113577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c3244ed66075554ca82661a25158e5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCorrect: 0
+  quizManagerInspetor: {fileID: 0}
 --- !u!1 &1758619299
 GameObject:
   m_ObjectHideFlags: 0
