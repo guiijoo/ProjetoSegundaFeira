@@ -11,6 +11,7 @@ TagManager:
   - Teleport
   - Inspetor
   - Button
+  - Friend
   layers:
   - Default
   - TransparentFX
