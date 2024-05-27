@@ -13,6 +13,9 @@ TagManager:
   - Button
   - Friend
   - MarketDoor
+  - BathroomDoor
+  - BathroomExit
+  - Toilet
   layers:
   - Default
   - TransparentFX
