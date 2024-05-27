@@ -65,15 +65,20 @@ public class VRGaze : MonoBehaviour
 
                 SceneManager.LoadScene("Market2");
 
+            }else if(img_gaze.fillAmount == 1 && _hit.transform.CompareTag("Bathroom2"))
+            {
+
+                SceneManager.LoadScene("Bathroom2");
+
             }else if(img_gaze.fillAmount == 1 && _hit.transform.CompareTag("MarketExit"))
             {
 
                 SceneManager.LoadScene("Out2");
 
-            }else if(img_gaze.fillAmount == 1 && _hit.transform.CompareTag("Iniciar"))
+            }else if(img_gaze.fillAmount == 1 && _hit.transform.CompareTag("Bus"))
             {
 
-                SceneManager.LoadScene("Out");
+                SceneManager.LoadScene("End");
 
             }
         }
