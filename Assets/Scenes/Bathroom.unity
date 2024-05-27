@@ -1908,12 +1908,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   QnA:
-  - Question: "Finalmente acordou! Se apresse, aproveite para ir ao banheiro e comer
-      antes do \xF4nibus sair!"
+  - Question: Hey, can you help me? I'm out of toilet paper here. Can you get me
+      some more?
     Answers:
-    - Ok, estou indo. Logo estou de volta!
-    - "Que dia lindo! \xC9 perfeito para um piquenique no parque."
-    - Ah, finalmente acordei! Sonhei que estava nadando em um mar de chocolate.
+    - Sorry, I can't help right now.
+    - Sure, I'll get you some toilet paper.
+    - Why didn't you bring your own paper?
+    CorrectAnswer: 2
+  - Question: Thanks! I owe you one. Did you manage to get everything done?
+    Answers:
+    - Yes, I did. I'm heading back to the bus.
+    - I found it quite interesting!
+    - I didn't like it much.
+    CorrectAnswer: 1
+  - Question: Great, but before you go, get the toilet paper for me!
+    Answers:
+    - Ok.
+    - No.
+    - Maybe.
     CorrectAnswer: 1
   options:
   - {fileID: 80177847}

@@ -2816,13 +2816,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   QnA:
-  - Question: "Finalmente acordou! Se apresse, aproveite para ir ao banheiro e comer
-      antes do \xF4nibus sair!"
+  - Question: Hello! Can I help you with anything today?
     Answers:
-    - Ok, estou indo. Logo estou de volta!
-    - "Que dia lindo! \xC9 perfeito para um piquenique no parque."
-    - Ah, finalmente acordei! Sonhei que estava nadando em um mar de chocolate.
+    - No, I'm just looking, thanks.
+    - I need to leave immediately, goodbye.
+    - Yes, I'd like these items (hands over a list)!
+    CorrectAnswer: 3
+  - Question: Sure, here you go! Do you need anything else?
+    Answers:
+    - Yes, where is the bathroom?
+    - Football game!
+    - I'm sleepy.
     CorrectAnswer: 1
+  - Question: It's at the end of this aisle behind you!
+    Answers:
+    - I like bread!
+    - Alright, thank you very much!
+    - What a day!
+    CorrectAnswer: 2
   options:
   - {fileID: 136131017144488573}
   - {fileID: 136131016610812719}
