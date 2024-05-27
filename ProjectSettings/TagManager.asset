@@ -12,6 +12,7 @@ TagManager:
   - Inspetor
   - Button
   - Friend
+  - MarketDoor
   layers:
   - Default
   - TransparentFX
