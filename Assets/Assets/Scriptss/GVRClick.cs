@@ -14,15 +14,16 @@ public class GVRClick : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        CancelInvoke();
         img_gaze.fillAmount = 0f;
-        
     }
 
     // Update is called once per frame
     void Update()
     {
         if (gvr_status)
-        {
+        {  
+            CancelInvoke();
             gvr_timer += Time.deltaTime;
             img_gaze.fillAmount = gvr_timer/total_time;
         }
